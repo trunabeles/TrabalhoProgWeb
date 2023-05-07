@@ -1,0 +1,24 @@
+:root{
+    --roxo-claro:rgba(214, 167, 231, 0.64);
+    --roxo-escuro:#612778;
+    --roxo-medio: rgba(91, 73, 120, 0.75);
+}
+body{
+    background-color: var(--roxo-claro);
+}
+.cabecalho{
+    background: var(--roxo-medio);
+    font-family: 'Raleway';
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    height: 60px;
+    display: flex !important;
+    justify-content: center;  
+}
+.cabecalho img{
+    object-fit: contain;
+    width: 55px;
+}
