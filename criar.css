@@ -2,9 +2,11 @@
     --roxo-claro:rgba(214, 167, 231, 0.64);
     --roxo-escuro:#612778;
     --roxo-medio: rgba(91, 73, 120, 0.75);
+    --cinza: rgb(217,217,217);
 }
 body{
     background-color: var(--roxo-claro);
+    min-height: 100vh;
 }
 .cabecalho{
     background: var(--roxo-medio);

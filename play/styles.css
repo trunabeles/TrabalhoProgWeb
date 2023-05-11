@@ -1,0 +1,89 @@
+.main__container {
+    max-width: 100%;
+    padding: 0 20px;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.card__container {
+    position: relative;
+    width: 400px;
+    height: 50%;
+}
+
+.card__first, .card__second, .card__third {
+    position: absolute;
+    background-color: var(--cinza);
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card__first {
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 5% 6%;
+}
+
+.card__question {
+    background-color: white;
+    width: 100%;
+    height: 30%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.card__choose {
+    margin: 10%;
+    text-align: center;
+    font-weight: 200;
+}
+
+.card-answers__container {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: inherit;
+}
+
+.card-answer__option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+    height: 100%;
+    cursor: pointer;
+}
+.card-answer__option:nth-last-child() {
+    padding-bottom: 0;
+}
+
+.card__second {
+    top: 0;
+    left: 11%;
+    rotate: 7deg;
+    z-index: 5;
+}
+
+.card__third {
+    top: 2%;
+    left: 20%;
+    rotate: 11deg;
+    z-index: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .card__second, .card__third {
+        display: none;
+    }
+}
