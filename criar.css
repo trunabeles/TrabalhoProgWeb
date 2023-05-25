@@ -3,6 +3,9 @@
     --roxo-escuro:#612778;
     --roxo-medio: rgba(91, 73, 120, 0.75);
     --cinza: rgb(217,217,217);
+    --cinza-hover: rgb(207, 207, 207);
+    --sucess: rgba(10, 151, 10, 0.781);
+    --error: rgb(238, 80, 80);
 }
 body{
     background-color: var(--roxo-claro);
