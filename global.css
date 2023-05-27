@@ -2,7 +2,6 @@
     --roxo-claro:rgba(214, 167, 231, 0.64);
     --roxo-escuro:#612778;
     --roxo-medio: rgba(91, 73, 120, 0.75);
-    --cinza1: #D9D9D9;
     --cinza: rgb(217,217,217);
     --cinza-hover: rgb(207, 207, 207);
     --sucess: rgba(10, 151, 10, 0.781);
@@ -28,16 +27,4 @@ body{
 .cabecalho img{
     object-fit: contain;
     width: 55px;
-}
-.card{
-    background-color: var(--cinza);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    padding: 15px;
-    gap:20px;
-}
-.card input{
-    border: #612778 2px solid;
-    border-radius: 15px;
-    background-color: var(--cinza);
 }
