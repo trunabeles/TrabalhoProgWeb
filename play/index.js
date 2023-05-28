@@ -130,9 +130,9 @@ function proximaQuestao(target, classe) {
 
 function showModal() {
     const acertos = document.querySelector('#acertos')
-    acertos.innerText = `${questoesCorretas} Acertos`
+    acertos.innerText = questoesCorretas === 1? `${questoesCorretas} Acerto` : `${questoesCorretas} Acertos`
     const erros = document.querySelector('#erros')
-    erros.innerText = `${questoesErradas} Erros`
+    erros.innerText = questoesErradas === 1? `${questoesErradas} Erro` : `${questoesErradas} Erros` 
     modal.classList.add('show')
     questoesCorretas = 0
     questoesErradas = 0
