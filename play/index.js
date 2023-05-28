@@ -70,9 +70,11 @@ const mockCardAtual = {
 
 let questaoAtual = 0
 let selected = false
+const modal = document.querySelector('#modal')
+let questoesCorretas = 0
+let questoesErradas = 0
 
 function main() {
-    console.log(questaoAtual)
     selected = false
     if (!mockCardAtual) {
         return
@@ -84,16 +86,14 @@ function main() {
     }
     
     if (questaoAtual === mockCardAtual.questoes.length) {
-        console.log('Acabou familia')
+        showModal()
     }
 }
 
 main()
 
 function preencherPergunta() {
-    console.log(mockCardAtual)
     const pergunta = document.querySelector('#card-question__description')
-    console.log(pergunta)
     pergunta.innerText = mockCardAtual.questoes[questaoAtual].pergunta
 }
 
@@ -109,17 +109,43 @@ function handleClick(target) {
         let classe;
         if (mockCardAtual.questoes[questaoAtual].correta == target.id) {
             classe = 'sucess'
+            questoesCorretas++
         } else {
             classe = 'error'
+            questoesErradas++
+            document.getElementById(mockCardAtual.questoes[questaoAtual].correta).classList.add('sucess')
         }
         target.classList.add(classe)
         selected = true
-        setTimeout(()=> proximaQuestao(target, classe), 5000)
+        setTimeout(()=> proximaQuestao(target, classe), 3000)
     }
 }
 
 function proximaQuestao(target, classe) {
-    questaoAtual++
     target.classList.remove(classe)
+    document.getElementById(mockCardAtual.questoes[questaoAtual].correta).classList.remove('sucess')
+    questaoAtual++
+    main()
+}
+
+function showModal() {
+    const acertos = document.querySelector('#acertos')
+    acertos.innerText = questoesCorretas === 1? `${questoesCorretas} Acerto` : `${questoesCorretas} Acertos`
+    const erros = document.querySelector('#erros')
+    erros.innerText = questoesErradas === 1? `${questoesErradas} Erro` : `${questoesErradas} Erros` 
+    modal.classList.add('show')
+    questoesCorretas = 0
+    questoesErradas = 0
+}
+
+function tentarNovamente() {
+    questaoAtual = 0
+    modal.classList.remove('show')
+    main()
+}
+
+function redirecionarParaHome() {
+    questaoAtual = 0
+    modal.classList.remove('show')
     main()
 }

@@ -22,7 +22,6 @@ body{
     height: 60px;
     display: flex !important;
     justify-content: center;  
-    margin-bottom: 50px;
 }
 .cabecalho img{
     object-fit: contain;
