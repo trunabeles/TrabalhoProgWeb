@@ -22,7 +22,7 @@
                         <label for="nomeLista">Nome da lista</label>
                         <input type="text" class="form-control" id="nomeLista">
                       </div>
-                      <span>Qnt cards: 0</span>
+                      <span id="qnt">Qnt cards: 0</span>
                 </div>
                 <div class="p-4 text-center">
                     <button type="button" class="m-2 btn btn-enviar" onclick="salvarLista()">Salvar lista de cards</button><br/>
@@ -41,39 +41,54 @@
                                 <span for="alt1">Alternativa 1</span>
                             </div>
                             <div class="col-sm text-end">
-                                <span for="opc1" class="text-sm-center" >Alternativa <br/>correta</span>
+                                <span for="opc1" class="text-center">Resposta <br/>correta?</span>
                             </div>
                         </div>
-                        <div class="d-flex align-items-baseline gap-4">
+                        <div class="d-flex align-items-baseline">
                             <input type="text" class="form-control" id="alt1">
-                            <input class="form-check-input" type="radio" value="1" name="flexRadioDefault" id="opc1">
+                            <input class="form-check-input m-3" type="radio" value="1" name="flexRadioDefault" id="opc1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="alt2">Alternativa 2</label>
-                        <div class="d-flex align-items-baseline gap-4">
+                        <div class="d-flex align-items-baseline">
                             <input type="text" class="form-control" id="alt2">
-                            <input class="form-check-input" type="radio" value="2" name="flexRadioDefault" id="opc2">
+                            <input class="form-check-input m-3" type="radio" value="2" name="flexRadioDefault" id="opc2">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="alt3">Alternativa 3</label>
-                        <div class="d-flex align-items-baseline gap-4">
+                        <div class="d-flex align-items-baseline">
                             <input type="text" class="form-control" id="alt3">
-                            <input class="form-check-input" type="radio" value="3" name="flexRadioDefault" id="opc3">
+                            <input class="form-check-input m-3" type="radio" value="3" name="flexRadioDefault" id="opc3">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="alt4">Alternativa 4</label>
-                        <div class="d-flex align-items-baseline gap-4">
+                        <div class="d-flex align-items-baseline">
                             <input type="text" class="form-control" id="alt4">
-                            <input class="form-check-input" type="radio" value="4" name="flexRadioDefault" id="opc4">
+                            <input class="form-check-input m-3" type="radio" value="4" name="flexRadioDefault" id="opc4">
                         </div>
                     </div>
-                    <div>
-                        <button onclick="enviarFormulario()">
-                            <img src="../imagens/add.png" alt="buttonpng"/>
-                        </button>
+                    <div class="d-flex justify-content-center gap-3">
+                        <div class="text-center">
+                            <a onclick="">
+                                <img src="../imagens/previous.png" alt="buttonpng"/>
+                                <p>VER ANTERIOR</p>
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <a onclick="enviarFormulario()">
+                                <img src="../imagens/add.png" alt="buttonpng"/>
+                                <p>INCLUIR CARD</p>
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <a onclick="">
+                                <img src="../imagens/next.png" alt="buttonpng"/>
+                                <p>VER PRÓXIMO</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,14 +97,20 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Formulário Inválido</h5>
+            <div class="d-flex justify-content-end">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="fecharModal()">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <p>Preencha TODOS os campos do formulário!!</p>
+            <div class="text-center modal-body">
+                <div>
+                    <img id="imagemExclamacao" src="../imagens/exclamation.png" hidden/>
+                    <img id="imagemTrue" src="../imagens/true.png" hidden/>
+                </div>
+                <br/>
+                <div>
+                    <p id="textoModal"></p>
+                </div>
             </div>
             <div class="modal-footer justify-content-center">
               <button type="button" class="btn btn-modal" data-dismiss="modal" onclick="fecharModal()">OK</button>
