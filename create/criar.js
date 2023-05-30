@@ -73,6 +73,8 @@ function salvarLista(){
         obj['listas'].push(novaLista);
         str = JSON.stringify(obj);
         lista=str;
+        //get item do localstorage e dps da um append e salva dnv
+        //veriificar se o localstorage tem valor antes
         localStorage.setItem('lista', lista);
 
         document.getElementById("nomeLista").value = "";

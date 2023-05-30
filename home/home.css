@@ -1,0 +1,13 @@
+.inicio{
+    color:white;
+    font-weight: 700;
+    font-size: 40px;
+}
+body{
+    background-color: var(--roxo-medio) !important;
+}
+.btn-criar{
+    background-color: white;
+    color: #612778;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
