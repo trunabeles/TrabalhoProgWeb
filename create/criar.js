@@ -1,6 +1,7 @@
 let lista = '{"listas":[]}';
 let questoes = '{"questoes":[]}';
 let qntQuestoes = 0;
+let idQuestaoAtual=0;
 function enviarFormulario() {
     if(!verificaCampos()){
         document.getElementById("textoModal").innerHTML = "<b>Preencha TODOS os campos do formulário!!</b>";
@@ -48,14 +49,39 @@ function montarObjeto(){
                 pergunta: document.getElementById("descricao").value,
                 alternativas: [document.getElementById("alt1").value, document.getElementById("alt2").value,
                                 document.getElementById("alt1").value, document.getElementById("alt1").value],
-                correta: 0 };
+                correta: verificaAlternativaCorreta() };
     obj['questoes'].push(questaoAtual);
     str = JSON.stringify(obj);
     questoes=str;
     document.getElementById("qnt").innerHTML = "Qnt cards: "+qntQuestoes;
+    idQuestaoAtual=idQuestaoAtual+1;
     limparCampos();
     //console.log(questoes);
     //cards.add(questaoAtual);
+}
+function getPrevious(){
+    if(idQuestaoAtual-1 <0)
+        return;
+    else{
+        var obj = JSON.parse(questoes);
+        console.log(obj['questoes'][idQuestaoAtual-1]);
+        // document.getElementById("descricao").value = 
+        // document.getElementById("alt1").value = 
+        // document.getElementById("alt1").value = 
+        // document.getElementById("alt1").value =
+        // document.getElementById("alt1").value =
+    }
+
+}
+function verificaAlternativaCorreta(){
+    if(document.getElementById("opc1").checked)
+        return 0;
+    else if(document.getElementById("opc2").checked)
+        return 1;   
+    else if(document.getElementById("opc3").checked)
+        return 2;
+    else
+        return 3;
 }
 function salvarLista(){
     if(qntQuestoes==0)
@@ -63,23 +89,41 @@ function salvarLista(){
     else if(document.getElementById("nomeLista").value=="")
         montarModalAlerta("Necessário informar o nome da lista!");
     else{
-        var obj = JSON.parse(lista);
-        qst = JSON.parse(questoes);
-        novaLista ={
-            titulo: document.getElementById("nomeLista").value,
-            quantidadeQuestoes: qntQuestoes,
-            questoes: qst['questoes']
+        listaStorage = localStorage.getItem('lista');
+        console.log("lista: "+listaStorage);
+
+        if(listaStorage!= null){
+            
+            listaStorage = JSON.parse(listaStorage);
+            qst = JSON.parse(questoes);
+
+            novaLista ={
+                titulo: document.getElementById("nomeLista").value,
+                quantidadeQuestoes: qntQuestoes,
+                questoes: qst['questoes']
+            }
+
+            listaStorage["listas"].push(novaLista);
+            localStorage.setItem('lista', JSON.stringify(listaStorage));
         }
-        obj['listas'].push(novaLista);
-        str = JSON.stringify(obj);
-        lista=str;
-        //get item do localstorage e dps da um append e salva dnv
-        //veriificar se o localstorage tem valor antes
-        localStorage.setItem('lista', lista);
+        else{
+            var obj = JSON.parse(lista);
+            qst = JSON.parse(questoes);
+            novaLista ={
+                titulo: document.getElementById("nomeLista").value,
+                quantidadeQuestoes: qntQuestoes,
+                questoes: qst['questoes']
+            }
+            obj['listas'].push(novaLista);
+            str = JSON.stringify(obj);
+            lista=str;
+            localStorage.setItem('lista', lista);
+        }
 
         document.getElementById("nomeLista").value = "";
         document.getElementById("qnt").innerHTML = "Qnt cards: 0";
         qntQuestoes = 0;
+        idQuestaoAtual=0;
 
         montarModalSalvar();
     }
