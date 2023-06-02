@@ -17,7 +17,9 @@
     max-height: 500px;
 }
 
-.card__first, .card__second, .card__third {
+.card__first,
+.card__second,
+.card__third {
     position: absolute;
     background-color: var(--cinza);
     width: 100%;
@@ -94,11 +96,13 @@
     z-index: 0;
 }
 
-.sucess, .sucess:hover {
+.sucess,
+.sucess:hover {
     background-color: var(--sucess);
 }
 
-.error, .error:hover {
+.error,
+.error:hover {
     background-color: var(--error);
 }
 
@@ -134,24 +138,24 @@
     gap: 1rem;
 }
 
-.modal__subtitle{
+.modal__subtitle {
     text-align: center;
 }
 
-.modal__result-box{
+.modal__result-box {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.modal__result-icon{
+.modal__result-icon {
     color: var(--roxo-escuro);
     font-size: 2rem;
     left: 0;
 }
 
-.modal__button-box{
+.modal__button-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,7 +165,7 @@
     flex-wrap: wrap;
 }
 
-.modal__button-again{
+.modal__button-again {
     flex: 1;
     min-width: 145px;
     background-color: white;
@@ -173,14 +177,14 @@
     transition: all 0.3s ease;
 }
 
-.modal__button-again:hover{
+.modal__button-again:hover {
     background-color: rgba(231, 225, 225, 0.767);
     color: var(--roxo-escuro);
 }
 
-.modal__button-main{
+.modal__button-main {
     flex: auto;
-    background-color: var(--roxo-escuro);    
+    background-color: var(--roxo-escuro);
     color: white;
     border: none;
     border-radius: 10px;
@@ -189,29 +193,44 @@
     transition: all 0.3s ease;
 }
 
-.modal__button-main:hover{
+.modal__button-main:hover {
     background-color: #490763ec;
     border: solid 1px var(--roxo-escuro);
 }
 
 
 @media screen and ((max-width: 700px) or (max-height: 500px)) {
-    .card__second, .card__third {
+    .main__container {
+        align-items: baseline;
+        margin-top: 50px;
+    }
+
+    .card__second,
+    .card__third {
         display: none;
     }
-    .card__choose{
+
+    .card__choose {
         margin: 5%;
     }
-    .card__container{
+
+    .card__container {
         height: 90%;
+        width: 90%;
     }
-    .card-answers__container{
+
+    .card-answers__container {
         min-height: auto;
+    }
+
+    .card-answer__option {
+        background-color: rgb(182, 176, 176);
+        margin-bottom: 20px;
     }
 }
 
 @media screen and (max-height: 400px) {
-    .card__first{
+    .card__first {
         height: auto;
     }
 }

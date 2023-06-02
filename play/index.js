@@ -46,27 +46,32 @@ const mockFlashcards = [
 ]
 //nome do item armazenado no localStorage: cardAtual
 // const flashcards = localStorage.getItem('cardAtual')
-const mockCardAtual = {
-    titulo: 'Titulo dos Cards',
-    quantidadeQuestoes: 4,
-    questoes: [
-        {
-            pergunta: 'Pergunta 01?',
-            alternativas: ['Alternativa 01', 'Alternativa 02', 'Alternativa 03', 'Alternativa 04'],
-            correta: 0
-        },
-        {
-            pergunta: 'Pergunta 02?',
-            alternativas: ['Alternativa 05', 'Alternativa 06', 'Alternativa 07', 'Alternativa 08'],
-            correta: 1
-        },
-        {
-            pergunta: 'Pergunta 03?',
-            alternativas: ['Alternativa 09', 'Alternativa 10', 'Alternativa 11', 'Alternativa 12'],
-            correta: 2
-        }
-    ]
-}
+// console.log('oie',)
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+var index = urlParams.get('index');
+const mockCardAtual = JSON.parse(localStorage.getItem("lista")).listas[index]
+// const mockCardAtual = {
+//     titulo: 'Titulo dos Cards',
+//     quantidadeQuestoes: 4,
+//     questoes: [
+//         {
+//             pergunta: 'Pergunta 01?',
+//             alternativas: ['Alternativa 01', 'Alternativa 02', 'Alternativa 03', 'Alternativa 04'],
+//             correta: 0
+//         },
+//         {
+//             pergunta: 'Pergunta 02?',
+//             alternativas: ['Alternativa 05', 'Alternativa 06', 'Alternativa 07', 'Alternativa 08'],
+//             correta: 1
+//         },
+//         {
+//             pergunta: 'Pergunta 03?',
+//             alternativas: ['Alternativa 09', 'Alternativa 10', 'Alternativa 11', 'Alternativa 12'],
+//             correta: 2
+//         }
+//     ]
+// }
 
 let questaoAtual = 0
 let selected = false
@@ -84,7 +89,7 @@ function main() {
         preencherPergunta()
         preencherAlternativas()
     }
-    
+
     if (questaoAtual === mockCardAtual.questoes.length) {
         showModal()
     }
@@ -117,7 +122,7 @@ function handleClick(target) {
         }
         target.classList.add(classe)
         selected = true
-        setTimeout(()=> proximaQuestao(target, classe), 3000)
+        setTimeout(() => proximaQuestao(target, classe), 3000)
     }
 }
 
@@ -130,9 +135,9 @@ function proximaQuestao(target, classe) {
 
 function showModal() {
     const acertos = document.querySelector('#acertos')
-    acertos.innerText = questoesCorretas === 1? `${questoesCorretas} Acerto` : `${questoesCorretas} Acertos`
+    acertos.innerText = questoesCorretas === 1 ? `${questoesCorretas} Acerto` : `${questoesCorretas} Acertos`
     const erros = document.querySelector('#erros')
-    erros.innerText = questoesErradas === 1? `${questoesErradas} Erro` : `${questoesErradas} Erros` 
+    erros.innerText = questoesErradas === 1 ? `${questoesErradas} Erro` : `${questoesErradas} Erros`
     modal.classList.add('show')
     questoesCorretas = 0
     questoesErradas = 0
@@ -145,7 +150,5 @@ function tentarNovamente() {
 }
 
 function redirecionarParaHome() {
-    questaoAtual = 0
-    modal.classList.remove('show')
-    main()
+    window.location.href = "../home/home.html"
 }
