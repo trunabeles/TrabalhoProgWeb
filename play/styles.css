@@ -104,7 +104,7 @@
 
 .modal__container {
     position: fixed;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     left: 0;
@@ -114,10 +114,6 @@
     opacity: 1;
     z-index: 10;
     background-color: rgba(117, 117, 117, 0.568);
-}
-
-.show {
-    display: flex;
 }
 
 .modal__box {
@@ -196,6 +192,9 @@
 
 
 @media screen and ((max-width: 700px) or (max-height: 500px)) {
+    .card__first {
+        border-radius: 20px;
+    }
     .card__second, .card__third {
         display: none;
     }
@@ -203,10 +202,11 @@
         margin: 5%;
     }
     .card__container{
+        width: 90%;
         height: 90%;
     }
     .card-answers__container{
-        min-height: auto;
+        min-height: none;
     }
 }
 

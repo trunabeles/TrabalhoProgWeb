@@ -1,0 +1,244 @@
+.main__container {
+    max-width: 100%;
+    padding: 20px 20px;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 80px;
+}
+
+.no-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+    min-width: 250px;
+    width: 40vw;
+    max-width: 400px;
+    min-height: 400px;
+    max-height: 500px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.no-card__new-collection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 220px;
+    margin: auto;
+}
+
+.no-card__icon {
+    width: 4rem;
+    height: auto;
+    cursor: pointer;
+}
+
+.colecao__back-icon {
+    color: var(--roxo-escuro);
+    rotate: -90deg;
+    cursor: pointer;
+}
+
+.colecao__next-icon {
+    color: var(--roxo-escuro);
+    rotate: 90deg;
+    cursor: pointer;
+}
+
+.colecao__back-icon:hover, .colecao__next-icon:hover {
+    color: var(--roxo-escuro-hover);
+}
+
+.colecao__container {
+    min-width: 60%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.colecao__card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 160px;
+    width: 25vw;
+    max-width: 250px;
+    flex: 1;
+    gap: 15%;
+    min-height: 300px;
+    height: 35vh;
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card__primary {
+    min-width: 180px;
+    width: 30vw;
+    max-width: 300px;
+    min-height: 350px;
+    height: 40vh;
+    gap: 15%;
+}
+
+.card__primary .card__play-icon {
+    font-size: 6rem;
+}
+
+.nova-colecao__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.nova-colecao__btn:hover {
+    background-color: rgba(243, 238, 238, 0.856);
+}
+
+.card__icons-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2px;
+}
+
+.card__icon {
+    width: 2rem;
+    height: auto;
+    cursor: pointer;
+}
+
+.card__play-icon {
+    font-size: 5rem;
+    color: var(--roxo-escuro);
+    cursor: pointer;
+}
+
+.card__icon:hover {
+    filter: sepia(20%) saturate(1500%) hue-rotate(5deg) brightness(50%) contrast(80%);
+}
+
+.card__play-icon:hover {
+    color: var(--roxo-escuro-hover);
+}
+
+.show {
+    display: flex;
+}
+
+.modal__container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    z-index: 10;
+    background-color: rgba(117, 117, 117, 0.568);
+    overflow: auto;
+}
+
+.modal__box {
+    width: 80%;
+    max-width: 550px;
+    min-height: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.modal__subtitle{
+    text-align: center;
+}
+
+.modal__warning-icon{
+    color: var(--roxo-escuro);
+    font-size: 8rem;
+}
+
+.modal__button-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    padding: 0 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
+
+.modal__button-again{
+    flex: 1;
+    min-width: 145px;
+    background-color: white;
+    border: solid 1px var(--roxo-escuro);
+    color: var(--roxo-escuro);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.3s ease;
+}
+
+.modal__button-again:hover{
+    background-color: rgba(231, 225, 225, 0.767);
+    color: var(--roxo-escuro);
+}
+
+.modal__button-main{
+    flex: auto;
+    background-color: var(--roxo-escuro);    
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.3s ease;
+}
+
+.modal__button-main:hover{
+    background-color: #490763ec;
+    border: solid 1px var(--roxo-escuro);
+}
+
+@media screen and (max-width: 670px) {
+    .colecao__card {
+        display: none;
+    }
+    .card__primary {
+        display: flex;
+        min-width: 200px;
+        width: 40vw;
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-height: 530px) {
+    .main__container {
+        gap: 30px;
+    }
+}

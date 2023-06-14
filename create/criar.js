@@ -153,6 +153,11 @@ function montarModalAlerta(texto){
     document.getElementById("imagemExclamacao").hidden = false;
     $('#exampleModal').modal('show');
 }
+
+function redirecionarParaColecao() {
+    const url = window.location.href.split('/create')
+    window.location.href = url[0] + '/collection/index.html'
+}
 // {
 //     titulo: document.getElementById("nomeLista").value,
 //     quantidadeQuestoes: qntQuestoes,

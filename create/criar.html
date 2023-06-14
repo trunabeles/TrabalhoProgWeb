@@ -11,12 +11,12 @@
   </head>
   <body>
     <header class="cabecalho">
-        <img src="../imagens/logo.png" alt="Minha Figura">
+        <img src="../images/logo.png" alt="Minha Figura">
         FLASH CARDS
     </header>
-    <div class="container" style="padding-top: 50px;">
-        <div class="row justify-content-center">
-            <div class="col-4">
+    <div class="container" style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="create-main row justify-content-center">
+            <div class="main-colmun col-4">
                 <div class="card">
                     <div class="form-group">
                         <label for="nomeLista">Nome da lista</label>
@@ -26,10 +26,10 @@
                 </div>
                 <div class="p-4 text-center">
                     <button type="button" class="m-2 btn btn-enviar" onclick="salvarLista()">Salvar lista de cards</button><br/>
-                    <button type="button" class="m-2 btn btn-voltar">Voltar para a consulta de listas</button>
+                    <button type="button" class="m-2 btn btn-voltar" onclick="redirecionarParaColecao()">Voltar para a consulta de listas</button>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="main-colmun col-6">
                 <div class="card">
                     <div class="form-group">
                         <label for="descricao">Descrição da pergunta</label>
@@ -73,19 +73,19 @@
                     <div class="d-flex flex-wrap justify-content-center gap-3">
                         <div class="text-center">
                             <a onclick="getPrevious()">
-                                <img src="../imagens/previous.png" alt="buttonpng"/>
+                                <img src="../images/previous.png" alt="buttonpng"/>
                                 <p>VER ANTERIOR</p>
                             </a>
                         </div>
                         <div class="text-center">
                             <a onclick="enviarFormulario()">
-                                <img src="../imagens/add.png" alt="buttonpng"/>
+                                <img src="../images/add.png" alt="buttonpng"/>
                                 <p>INCLUIR CARD</p>
                             </a>
                         </div>
                         <div class="text-center">
                             <a onclick="">
-                                <img src="../imagens/next.png" alt="buttonpng"/>
+                                <img src="../images/next.png" alt="buttonpng"/>
                                 <p>VER PRÓXIMO</p>
                             </a>
                         </div>
@@ -104,8 +104,8 @@
             </div>
             <div class="text-center modal-body">
                 <div>
-                    <img id="imagemExclamacao" src="../imagens/exclamation.png" hidden/>
-                    <img id="imagemTrue" src="../imagens/true.png" hidden/>
+                    <img id="imagemExclamacao" src="../images/exclamation.png" hidden/>
+                    <img id="imagemTrue" src="../images/true.png" hidden/>
                 </div>
                 <br/>
                 <div>
