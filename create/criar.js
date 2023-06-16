@@ -46,10 +46,15 @@ function montarObjeto(){
     qntQuestoes = qntQuestoes+1;
     var obj = JSON.parse(questoes);
     let questaoAtual = {
-                pergunta: document.getElementById("descricao").value,
-                alternativas: [document.getElementById("alt1").value, document.getElementById("alt2").value,
-                                document.getElementById("alt1").value, document.getElementById("alt1").value],
-                correta: verificaAlternativaCorreta() };
+        pergunta: document.getElementById("descricao").value,
+        alternativas: [
+            document.getElementById("alt1").value, 
+            document.getElementById("alt2").value,
+            document.getElementById("alt3").value,
+            document.getElementById("alt4").value
+        ],
+        correta: verificaAlternativaCorreta() 
+    };
     obj['questoes'].push(questaoAtual);
     str = JSON.stringify(obj);
     questoes=str;
