@@ -214,6 +214,7 @@ window.onload = function () {
     if (objeto) {
         // Preenche os campos com os valores do objeto
         document.getElementById("nomeLista").value = objeto.titulo;
+        document.getElementById("qnt").innerHTML = "Qnt cards: "+objeto.quantidadeQuestoes;
         document.getElementById("descricao").value = objeto.questoes[0].pergunta;
         document.getElementById("alt1").value = objeto.questoes[0].alternativas[0];
         document.getElementById("alt2").value = objeto.questoes[0].alternativas[1];
