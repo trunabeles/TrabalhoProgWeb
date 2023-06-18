@@ -82,3 +82,9 @@ function redirecionarParaHome() {
     const url = window.location.href.split('/play')
     window.location.href = url[0] + '/home/home.html'
 }
+function redirecionarParaColecao() {
+    questaoAtual = 0
+    modal.setAttribute('hidden', '')
+    const url = window.location.href.split('/play')
+    window.location.href = url[0] + '/collection/index.html'
+}

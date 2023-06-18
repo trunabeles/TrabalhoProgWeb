@@ -147,3 +147,7 @@ function excluir() {
         esconderModal()
     }
 }
+function redirecionarParaHome() {
+    const url = window.location.href.split('/collection')
+    window.location.href = url[0] + '/home/home.html'
+}
