@@ -195,7 +195,7 @@ function preencheCamposQuestionario(obj){
     document.getElementById("alt4").value = obj['alternativas'][3];
     document.getElementById("alt4").disabled = true;
 
-    document.getElementById("btn-salvar").disabled = true;
+    //document.getElementById("btn-salvar").disabled = true;
 
     var opcCertaName = "opc"+(obj['correta']+1);
     document.getElementById(opcCertaName).checked = true;
